@@ -1,0 +1,299 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zry - Digital Cupid 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono&display=swap');
+        
+        :root {
+            --pink-bg: #ffeef2;
+            --pink-accent: #ff4d6d;
+            --pink-dark: #c9184a;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--pink-bg);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .code-font { font-family: 'JetBrains Mono', monospace; }
+
+        /* Background Photo Layer */
+        .bg-photo-container {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-photo {
+            position: absolute;
+            opacity: 0.15;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.1);
+            animation: float-around 12s ease-in-out infinite;
+        }
+
+        @keyframes float-around {
+            0%, 100% { transform: translate(0, 0) rotate(var(--r)); }
+            50% { transform: translate(10px, -25px) rotate(calc(var(--r) + 8deg)); }
+        }
+
+        /* Nav Design */
+        .nav-pill {
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: #ffb3c1;
+        }
+
+        .nav-pill.active {
+            color: var(--pink-dark);
+            border-bottom: 2px solid var(--pink-dark);
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.08);
+        }
+
+        .pink-card {
+            background: linear-gradient(135deg, #ff4d6d, #c9184a);
+            border-radius: 40px;
+            color: white;
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.3);
+        }
+
+        .btn-main {
+            background: var(--pink-accent);
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            background: var(--pink-dark);
+        }
+
+        .floating-icon {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <!-- Layer Foto Latar Belakang -->
+    <div class="bg-photo-container" id="bgPhotoContainer"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-md z-50 border-b border-pink-100">
+        <div class="flex justify-around items-center py-5 px-4">
+            <a href="#intro" class="nav-pill active uppercase">Intro</a>
+            <a href="#feelings" class="nav-pill uppercase">Feelings</a>
+            <a href="#play" class="nav-pill uppercase">Play</a>
+            <a href="#final" class="nav-pill uppercase">Final</a>
+        </div>
+    </nav>
+
+    <div class="pt-24 px-5 max-w-md mx-auto space-y-10 relative z-10">
+        
+        <!-- SECTION 1: INTRO -->
+        <section id="intro" class="animate__animated animate__fadeIn">
+            <div class="glass-card p-10 text-center relative overflow-hidden">
+                <p class="text-[10px] font-bold tracking-[0.2em] text-pink-400 uppercase mb-4">The Digital Cupid 2026</p>
+                <div class="text-6xl mb-6 floating-icon">💖</div>
+                <h1 class="text-3xl font-extrabold text-gray-800 leading-tight mb-4">
+                    I'm <span class="text-pink-500">Zry</span>, your favorite dev.
+                </h1>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                    Gue gak cuma ngerapihin <span class="text-pink-500 font-semibold italic">dirty code</span>, tapi juga ngerapihin masa depan kita biar makin <span class="italic">flawless</span> di 2026 ini.
+                </p>
+                <a href="#feelings" class="btn-main inline-block text-white px-10 py-3 font-bold text-sm shadow-lg shadow-pink-200">
+                    Cek Perasaan ↓
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION 2: FEELINGS -->
+        <section id="feelings" class="space-y-6 animate__animated animate__fadeIn">
+            <div class="border-2 border-dashed border-pink-300 rounded-[40px] p-8 bg-white/40">
+                <h2 class="text-2xl font-bold text-pink-800 mb-4 italic">Deep Talk...</h2>
+                <p class="text-gray-600 leading-relaxed italic">
+                    "Gue mungkin gak seromantis cowok di film, tapi logaritma gue cuma mengarah ke satu titik: <span class="text-pink-600 font-bold uppercase">KAMU.</span>"
+                </p>
+            </div>
+
+            <div class="pink-card p-8 text-center">
+                <div class="text-3xl mb-4 font-bold code-font text-white">&lt;/&gt;</div>
+                <p class="text-lg font-bold leading-tight">
+                    "Hidup aku tuh hampa kayak komputer tanpa Wi-Fi kalo gak ada kamu."
+                </p>
+            </div>
+
+            <div class="glass-card p-8">
+                <p class="text-gray-600 text-sm italic leading-relaxed text-center">
+                    "Cintaku ke kamu itu kayak <code class="code-font text-pink-600 font-bold">position: fixed;</code>. Gak bakal kegeser walaupun dunia lagi kena scroll sejauh apa pun."
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PLAY (Game Kecil) -->
+        <section id="play" class="animate__animated animate__fadeIn text-center">
+            <h2 class="text-3xl font-extrabold text-pink-800 mb-2">Vibe Check</h2>
+            <p class="text-pink-500 text-sm font-semibold mb-6">Klik hatinya 10x buat lanjut!</p>
+            
+            <div class="glass-card p-8">
+                <div class="bg-pink-50 inline-block px-8 py-4 rounded-3xl mb-6">
+                    <p class="text-xs font-bold text-pink-400 uppercase mb-1">Skor Kamu:</p>
+                    <p id="score" class="text-4xl font-extrabold text-pink-600">0</p>
+                </div>
+                
+                <div class="relative h-48 bg-pink-100/30 rounded-3xl overflow-hidden border-2 border-white" id="game-zone">
+                    <button id="target" class="absolute bg-white p-3 rounded-2xl shadow-md text-2xl transition-all duration-100">💖</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FINAL -->
+        <section id="final" class="animate__animated animate__fadeIn">
+            <div class="pink-card p-10 text-center shadow-2xl relative overflow-hidden">
+                <div class="bg-white inline-block p-4 rounded-2xl mb-8 shadow-inner">
+                    <span class="text-4xl">💌</span>
+                </div>
+                <h2 class="text-3xl font-extrabold text-white mb-6 uppercase tracking-tight">Jadi, Gimana?</h2>
+                <p class="text-pink-100 text-sm mb-10 leading-relaxed">
+                    Udah sejauh ini masa gak mau gas? <br>
+                    Gue udah nyiapin space khusus di hati gue buat lu.
+                </p>
+                
+                <div class="bg-white rounded-3xl p-1 overflow-hidden">
+                    <button onclick="acceptZry()" class="w-full py-5 text-pink-600 font-extrabold text-xl uppercase tracking-widest hover:bg-pink-50 transition-colors">
+                        GAS MAU!
+                    </button>
+                </div>
+                <p class="text-pink-200 text-[10px] mt-6 font-bold uppercase opacity-50">Gak Dulu (Lagi Maintenance)</p>
+            </div>
+        </section>
+
+        <footer class="text-center py-10">
+            <p class="text-pink-300 text-[10px] font-bold uppercase tracking-[0.4em]">&copy; 2026 ZRY Project &bull; Built with Love</p>
+        </footer>
+    </div>
+
+    <!-- Modal Success -->
+    <div id="modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-[100] items-center justify-center p-6">
+        <div class="bg-white rounded-[40px] p-10 text-center max-w-xs animate__animated animate__zoomIn">
+            <div class="text-6xl mb-4">🥳</div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">ASIK!</h3>
+            <p class="text-gray-500 text-sm mb-6">Database hati Zry sekarang udah terkunci buat kamu. Gak ada lagi bug kesepian!</p>
+            <button onclick="closeModal()" class="w-full bg-pink-500 text-white py-4 rounded-2xl font-bold">Lanjutkan Hidup Bareng</button>
+        </div>
+    </div>
+
+    <script>
+        // Data Foto Background
+        const myPhotos = [
+            '1000448000.jpg', '1000447998.jpg', '1000447999.jpg', 
+            '1000447996.jpg', '1000447997.jpg', '1000446827.jpg', 
+            '1000446786.jpg', '1000445942.jpg'
+        ];
+
+        // Buat Background Melayang
+        const bgContainer = document.getElementById('bgPhotoContainer');
+        for (let i = 0; i < 15; i++) {
+            const img = document.createElement('img');
+            img.src = myPhotos[Math.floor(Math.random() * myPhotos.length)];
+            img.className = 'floating-photo';
+            
+            const size = Math.random() * 100 + 100;
+            const top = Math.random() * 90;
+            const left = Math.random() * 90;
+            const rot = Math.random() * 40 - 20;
+            const delay = Math.random() * 5;
+
+            img.style.width = `${size}px`;
+            img.style.top = `${top}%`;
+            img.style.left = `${left}%`;
+            img.style.setProperty('--r', `${rot}deg`);
+            img.style.animationDelay = `${delay}s`;
+
+            bgContainer.appendChild(img);
+        }
+
+        // Game Logic
+        let score = 0;
+        const target = document.getElementById('target');
+        const scoreDisplay = document.getElementById('score');
+        const gameZone = document.getElementById('game-zone');
+
+        target.addEventListener('click', () => {
+            score++;
+            scoreDisplay.innerText = score;
+            moveTarget();
+            if(score === 10) {
+                document.getElementById('final').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        function moveTarget() {
+            const maxX = gameZone.clientWidth - target.clientWidth;
+            const maxY = gameZone.clientHeight - target.clientHeight;
+            target.style.left = Math.floor(Math.random() * maxX) + 'px';
+            target.style.top = Math.floor(Math.random() * maxY) + 'px';
+        }
+        moveTarget();
+
+        // Nav Scroll Active
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navPills = document.querySelectorAll('.nav-pill');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navPills.forEach(pill => {
+                pill.classList.remove('active', 'text-pink-600');
+                pill.classList.add('text-pink-300');
+                if (pill.getAttribute('href').includes(current)) {
+                    pill.classList.add('active');
+                    pill.classList.remove('text-pink-300');
+                }
+            });
+        });
+
+        function acceptZry() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+```
